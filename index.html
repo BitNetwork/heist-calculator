@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='width=device-width'>
+  <title>Heist Payout Calculator</title>
+  <style>
+  input, textarea {
+    font-size: 15px;
+    font-family: monospace, sans-serif;
+  }
+
+  input {
+    width: 250px;
+    height: 25px;
+  }
+
+  textarea {
+    width: 250px;
+    height: 100px;
+  }
+
+  #output {
+    height: 250px;
+  }
+  </style>
+</head>
+<body>
+
+  Payout<br><input id='payout' onchange='inputChanged();' placeholder='Payout of heist'><br>
+  Winners<br><input id='numWinners' onchange='inputChanged();' placeholder='Number of winners'><br>
+  <textarea id='winners' onchange='document.getElementById("numWinners").value = this.value === "" ? 0 : this.value.split("\n").length; inputChanged();' placeholder='User tags of winners without the @ sign (ex: Bit#8289). This is optional; to ingore leave empty.'></textarea><br>
+  Losers<br><input id='numLosers' onchange='inputChanged();' placeholder='Number of losers'><br>
+  <textarea id='losers' onchange='document.getElementById("numLosers").value = this.value === "" ? 0 : this.value.split("\n").length; inputChanged();' placeholder='User tags of losers without the @ sign (ex: Bit#8289). This is optional; to ingore leave empty.'></textarea><br>
+  Output<br><textarea id='output' placeholder='Output of calculator will go here.'></textarea>
+  <script src='main.js'></script>
+</body>
+</html>
