@@ -16,7 +16,7 @@ function splitWinnings(payout, winners, losers) {
   }
   transferText = transferText.substring(0, transferText.length - 1);
 
-  return [winnerIndividualWinnings, loserIndividualWinnings, transferText];
+  return [Math.floor(winnerIndividualWinnings), Math.floor(loserIndividualWinnings), transferText];
 }
 
 function inputChanged() {
